@@ -5,7 +5,7 @@ export type Project = {
   category: "Master" | "Clienti";
   year: string;
   tags: string[];
-  tone: "primary" | "accent" | "secondary" | "card";
+  tone: "primary" | "pink" | "cobalt" | "yellow";
   summary: string;
   brief: string;
   approach: string[];
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     category: "Master",
     year: "2026",
     tags: ["Project work", "RCS Academy", "Campagna", "Contenuti"],
-    tone: "accent",
+    tone: "pink",
     summary: "Project work del master: un'idea di campagna social per Paramount, dal concept ai contenuti.",
     brief: "Il brief chiedeva di creare attesa e conversazione online attorno ai contenuti Paramount, coinvolgendo il pubblico in modo creativo.",
     approach: [
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     category: "Clienti",
     year: "2026",
     tags: ["Freelance", "Gestione", "Instagram"],
-    tone: "secondary",
+    tone: "cobalt",
     summary: "Il mio primo cliente: gestisco i suoi social, dal piano editoriale alla pubblicazione.",
     brief: "Il cliente voleva una presenza online più curata e costante per farsi conoscere da nuovi clienti.",
     approach: [
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     category: "Clienti",
     year: "2026",
     tags: ["Freelance", "Strategia", "Presentazione"],
-    tone: "card",
+    tone: "yellow",
     summary: "Una presentazione di progetto per impostare da zero la comunicazione social del cliente.",
     brief: "Prima di partire con la gestione, il cliente aveva bisogno di una visione chiara: dove essere presente, cosa comunicare e come.",
     approach: [
@@ -89,7 +89,9 @@ export const projects: Project[] = [
 
 export const toneClass: Record<Project["tone"], string> = {
   primary: "bg-primary text-primary-foreground",
-  accent: "bg-accent text-accent-foreground",
-  secondary: "bg-secondary text-secondary-foreground",
-  card: "bg-card text-card-foreground",
+  pink: "bg-pink text-foreground",
+  cobalt: "bg-cobalt text-paper",
+  yellow: "bg-yellow text-foreground",
 };
+
+export const tilt = ["-rotate-1", "rotate-1", "rotate-[0.6deg]", "-rotate-[0.8deg]"];
