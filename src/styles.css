@@ -19,8 +19,16 @@
  */
 
 @theme inline {
-  --font-display: "Bebas Neue", sans-serif;
-  --font-sans: "Barlow", sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --font-hand: "Permanent Marker", cursive;
+  --font-mono: "DM Mono", monospace;
+  --color-pink: var(--pink);
+  --color-yellow: var(--yellow);
+  --color-cobalt: var(--cobalt);
+  --color-jungle: var(--jungle);
+  --color-paper: var(--paper);
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
   --radius-sm: calc(var(--radius) - 4px);
@@ -66,28 +74,33 @@
 }
 
 :root {
-  --radius: 0.25rem;
-  --background: oklch(0.97 0.012 85);
-  --foreground: oklch(0.17 0.01 60);
-  --card: oklch(0.99 0.006 85);
-  --card-foreground: oklch(0.17 0.01 60);
-  --popover: oklch(0.99 0.006 85);
-  --popover-foreground: oklch(0.17 0.01 60);
-  --primary: oklch(0.63 0.22 32);
-  --primary-foreground: oklch(0.98 0.01 85);
-  --secondary: oklch(0.17 0.01 60);
-  --secondary-foreground: oklch(0.97 0.012 85);
-  --muted: oklch(0.92 0.015 85);
-  --muted-foreground: oklch(0.45 0.015 60);
-  --accent: oklch(0.9 0.19 125);
-  --accent-foreground: oklch(0.17 0.01 60);
-  --highlight: oklch(0.9 0.19 125);
-  --highlight-foreground: oklch(0.17 0.01 60);
+  --radius: 0;
+  --background: oklch(0.955 0.012 90);
+  --paper: oklch(0.985 0.006 90);
+  --foreground: oklch(0.16 0.005 60);
+  --card: oklch(0.985 0.006 90);
+  --card-foreground: oklch(0.16 0.005 60);
+  --popover: oklch(0.985 0.006 90);
+  --popover-foreground: oklch(0.16 0.005 60);
+  --primary: oklch(0.57 0.22 27);
+  --primary-foreground: oklch(0.985 0.006 90);
+  --secondary: oklch(0.16 0.005 60);
+  --secondary-foreground: oklch(0.985 0.006 90);
+  --muted: oklch(0.91 0.015 90);
+  --muted-foreground: oklch(0.42 0.01 60);
+  --accent: oklch(0.89 0.17 98);
+  --accent-foreground: oklch(0.16 0.005 60);
+  --highlight: oklch(0.89 0.17 98);
+  --highlight-foreground: oklch(0.16 0.005 60);
+  --pink: oklch(0.74 0.17 350);
+  --yellow: oklch(0.89 0.17 98);
+  --cobalt: oklch(0.48 0.2 262);
+  --jungle: oklch(0.45 0.1 165);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.17 0.01 60);
-  --input: oklch(0.17 0.01 60);
-  --ring: oklch(0.63 0.22 32);
+  --border: oklch(0.16 0.005 60);
+  --input: oklch(0.16 0.005 60);
+  --ring: oklch(0.57 0.22 27);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -150,9 +163,29 @@
 }
 
 @layer base {
-  body { font-family: var(--font-sans); }
-  h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0.01em; line-height: 0.9; }
+  body {
+    font-family: var(--font-sans);
+    background-image: radial-gradient(color-mix(in oklab, var(--foreground) 7%, transparent) 1px, transparent 1px);
+    background-size: 4px 4px;
+  }
+  h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: 0.88; letter-spacing: -0.01em; }
 }
 @keyframes marquee { to { transform: translateX(-50%); } }
-@utility animate-marquee { animation: marquee 22s linear infinite; }
-@utility shadow-brutal { box-shadow: 6px 6px 0 var(--foreground); }
+@utility animate-marquee { animation: marquee 24s linear infinite; }
+@utility shadow-brutal { box-shadow: 5px 5px 0 var(--foreground); }
+@utility tape {
+  position: relative;
+  &::before {
+    content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 24px;
+    transform: translateX(-50%) rotate(-3deg);
+    background: color-mix(in oklab, var(--yellow) 70%, transparent);
+    box-shadow: 0 1px 2px color-mix(in oklab, var(--foreground) 20%, transparent);
+  }
+}
+@utility torn {
+  clip-path: polygon(0 3%, 6% 0, 14% 2%, 22% 0, 31% 3%, 40% 0, 50% 2%, 60% 0, 70% 3%, 80% 0, 90% 2%, 100% 0, 100% 97%, 92% 100%, 83% 97%, 74% 100%, 64% 98%, 55% 100%, 45% 97%, 35% 100%, 25% 98%, 15% 100%, 6% 97%, 0 100%);
+}
+@utility sticker {
+  font-family: var(--font-hand);
+  display: inline-block;
+}
