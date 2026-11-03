@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChiSonoRouteImport } from './routes/chi-sono'
+import { Route as ContattiRouteImport } from './routes/contatti'
+import { Route as ProgettiSlugRouteImport } from './routes/progetti.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChiSonoRoute = ChiSonoRouteImport.update({
+  id: '/chi-sono',
+  path: '/chi-sono',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContattiRoute = ContattiRouteImport.update({
+  id: '/contatti',
+  path: '/contatti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgettiSlugRoute = ProgettiSlugRouteImport.update({
+  id: '/progetti/$slug',
+  path: '/progetti/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chi-sono': typeof ChiSonoRoute
+  '/contatti': typeof ContattiRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chi-sono': typeof ChiSonoRoute
+  '/contatti': typeof ContattiRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chi-sono': typeof ChiSonoRoute
+  '/contatti': typeof ContattiRoute
+  '/progetti/$slug': typeof ProgettiSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/chi-sono' | '/contatti' | '/progetti/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/chi-sono' | '/contatti' | '/progetti/$slug'
+  id: '__root__' | '/' | '/chi-sono' | '/contatti' | '/progetti/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChiSonoRoute: typeof ChiSonoRoute
+  ContattiRoute: typeof ContattiRoute
+  ProgettiSlugRoute: typeof ProgettiSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chi-sono': {
+      id: '/chi-sono'
+      path: '/chi-sono'
+      fullPath: '/chi-sono'
+      preLoaderRoute: typeof ChiSonoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contatti': {
+      id: '/contatti'
+      path: '/contatti'
+      fullPath: '/contatti'
+      preLoaderRoute: typeof ContattiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progetti/$slug': {
+      id: '/progetti/$slug'
+      path: '/progetti/$slug'
+      fullPath: '/progetti/$slug'
+      preLoaderRoute: typeof ProgettiSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChiSonoRoute: ChiSonoRoute,
+  ContattiRoute: ContattiRoute,
+  ProgettiSlugRoute: ProgettiSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
