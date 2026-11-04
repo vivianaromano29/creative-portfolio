@@ -5,7 +5,7 @@ export type Project = {
   category: "Master" | "Clienti";
   year: string;
   tags: string[];
-  tone: "primary" | "pink" | "cobalt" | "yellow";
+  tone: "primary" | "pink" | "sky" | "lime";
   summary: string;
   brief: string;
   approach: string[];
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     category: "Clienti",
     year: "2026",
     tags: ["Freelance", "Gestione", "Instagram"],
-    tone: "cobalt",
+    tone: "sky",
     summary: "Il mio primo cliente: gestisco i suoi social, dal piano editoriale alla pubblicazione.",
     brief: "Il cliente voleva una presenza online più curata e costante per farsi conoscere da nuovi clienti.",
     approach: [
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     category: "Clienti",
     year: "2026",
     tags: ["Freelance", "Strategia", "Presentazione"],
-    tone: "yellow",
+    tone: "lime",
     summary: "Una presentazione di progetto per impostare da zero la comunicazione social del cliente.",
     brief: "Prima di partire con la gestione, il cliente aveva bisogno di una visione chiara: dove essere presente, cosa comunicare e come.",
     approach: [
@@ -90,8 +90,8 @@ export const projects: Project[] = [
 export const toneClass: Record<Project["tone"], string> = {
   primary: "bg-primary text-primary-foreground",
   pink: "bg-pink text-foreground",
-  cobalt: "bg-cobalt text-paper",
-  yellow: "bg-yellow text-foreground",
+  sky: "bg-sky text-foreground",
+  lime: "bg-lime text-foreground",
 };
 
 export const tilt = ["-rotate-1", "rotate-1", "rotate-[0.6deg]", "-rotate-[0.8deg]"];

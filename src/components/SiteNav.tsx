@@ -8,19 +8,19 @@ const links = [
 
 export function SiteNav() {
   return (
-    <nav className="sticky top-0 z-50 border-b-2 border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Link to="/" className="font-display text-2xl transition-colors hover:text-primary">
-          VIVIANA ROMANO
+    <nav className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
+        <Link to="/" className="sticker -rotate-3 text-2xl transition-transform hover:rotate-0">
+          viviana*
         </Link>
-        <div className="flex gap-1 sm:gap-2">
+        <div className="flex gap-1 font-mono text-xs uppercase sm:gap-4 sm:text-sm">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               activeOptions={{ exact: true }}
-              className="px-2 py-1 font-semibold transition-colors hover:bg-accent hover:text-accent-foreground sm:px-3"
-              activeProps={{ className: "bg-secondary text-secondary-foreground" }}
+              className="border-b-2 border-transparent px-1 py-1 transition-colors hover:border-primary"
+              activeProps={{ className: "!border-foreground" }}
             >
               {l.label}
             </Link>
@@ -33,10 +33,11 @@ export function SiteNav() {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t-2 border-border">
-      <div className="mx-auto flex max-w-6xl justify-between px-6 py-8 text-sm text-muted-foreground">
-        <span>© 2026 Viviana Romano</span>
-        <span>Junior Social Media Manager</span>
+    <footer className="bg-sky">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-4 px-6 py-10">
+        <p className="font-display text-5xl uppercase leading-none">Stay<br />social*</p>
+        <p className="sticker rotate-2 text-lg">© 2026 Viviana Romano</p>
+        <p className="font-mono text-xs uppercase">Junior Social Media Manager</p>
       </div>
     </footer>
   );

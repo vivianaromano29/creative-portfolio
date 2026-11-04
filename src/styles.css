@@ -29,6 +29,8 @@
   --color-cobalt: var(--cobalt);
   --color-jungle: var(--jungle);
   --color-paper: var(--paper);
+  --color-lime: var(--lime);
+  --color-sky: var(--sky);
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
   --radius-sm: calc(var(--radius) - 4px);
@@ -96,6 +98,8 @@
   --yellow: oklch(0.89 0.17 98);
   --cobalt: oklch(0.48 0.2 262);
   --jungle: oklch(0.45 0.1 165);
+  --lime: oklch(0.91 0.2 120);
+  --sky: oklch(0.82 0.08 235);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.16 0.005 60);

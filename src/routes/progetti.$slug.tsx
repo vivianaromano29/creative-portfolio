@@ -40,12 +40,12 @@ function ProjectPage() {
     <main>
       <header className={`border-b-2 border-border ${toneClass[p.tone]}`}>
         <div className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-          <Link to="/" className="font-semibold opacity-80 hover:opacity-100">← Tutti i progetti</Link>
-          <p className="mt-10 font-semibold uppercase opacity-75">{p.client} · {p.year}</p>
+          <Link to="/" className="block font-mono text-xs uppercase hover:underline">← Tutti i progetti</Link>
+          <p className="sticker mt-10 -rotate-2 text-3xl">{p.client} · {p.year}</p>
           <h1 className="mt-2 text-7xl md:text-9xl">{p.title}</h1>
           <div className="mt-8 flex flex-wrap gap-2">
             {p.tags.map((t) => (
-              <span key={t} className="border-2 border-current px-3 py-1 text-sm font-semibold">{t}</span>
+              <span key={t} className="rounded-full border-2 border-current px-3 py-1 font-mono text-xs uppercase">{t}</span>
             ))}
           </div>
         </div>
@@ -59,7 +59,7 @@ function ProjectPage() {
         <ol className="space-y-4">
           {p.approach.map((a, i) => (
             <li key={a} className="flex items-baseline gap-4 border-b-2 border-border pb-4 text-lg">
-              <span className="font-display text-3xl text-primary">{String(i + 1).padStart(2, "0")}</span>
+              <span className="sticker text-3xl text-primary">{String(i + 1).padStart(2, "0")}</span>
               {a}
             </li>
           ))}
@@ -68,7 +68,7 @@ function ProjectPage() {
         <h2 className="text-5xl">Consegnati</h2>
         <div className="flex flex-wrap gap-3">
           {p.deliverables.map((d) => (
-            <span key={d} className="bg-accent px-4 py-2 font-semibold text-accent-foreground">{d}</span>
+            <span key={d} className="sticker -rotate-2 bg-lime px-4 py-2 text-lg">{d}</span>
           ))}
         </div>
       </section>
@@ -76,7 +76,7 @@ function ProjectPage() {
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-6 md:grid-cols-3">
           {[1, 2, 3].map((n) => (
-            <div key={n} className="flex aspect-[4/5] items-center justify-center border-2 border-dashed border-border bg-muted text-muted-foreground">
+            <div key={n} className="flex aspect-[4/5] items-center justify-center tape torn bg-paper font-mono text-xs uppercase text-muted-foreground shadow-brutal">
               Immagine {n} in arrivo
             </div>
           ))}

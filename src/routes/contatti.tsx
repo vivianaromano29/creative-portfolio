@@ -21,13 +21,13 @@ function Contact() {
         <h1 className="text-[18vw] md:text-[11rem]">Scrivimi!</h1>
         <p className="mt-4 max-w-lg text-xl">Hai un progetto in mente o vuoi vedere le presentazioni complete? Ti rispondo entro 24 ore.</p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <a href="mailto:ciao@vivianaromano.it" className="border-2 border-border bg-accent px-6 py-4 font-display text-3xl text-accent-foreground shadow-brutal transition-transform hover:-translate-y-1">
+          <a href="mailto:ciao@vivianaromano.it" className="border-2 border-border bg-lime px-6 py-4 font-display text-3xl uppercase text-foreground -rotate-2 shadow-brutal transition-transform hover:-translate-y-1">
             ciao@vivianaromano.it
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="border-2 border-border bg-secondary px-6 py-4 font-display text-3xl text-secondary-foreground shadow-brutal transition-transform hover:-translate-y-1">
+          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="border-2 border-border bg-pink px-6 py-4 font-display text-3xl uppercase text-foreground rotate-1 shadow-brutal transition-transform hover:-translate-y-1">
             Instagram
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="border-2 border-border bg-card px-6 py-4 font-display text-3xl text-card-foreground shadow-brutal transition-transform hover:-translate-y-1">
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="border-2 border-border bg-sky px-6 py-4 font-display text-3xl uppercase text-foreground -rotate-1 shadow-brutal transition-transform hover:-translate-y-1">
             LinkedIn
           </a>
         </div>

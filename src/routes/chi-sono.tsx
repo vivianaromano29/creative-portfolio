@@ -19,7 +19,7 @@ const skills = ["Strategia social", "Piano editoriale", "Copywriting", "Instagra
 function About() {
   return (
     <main className="mx-auto max-w-6xl px-6 py-16 md:py-24">
-      <h1 className="text-8xl md:text-[10rem]">Ciao, sono <span className="text-primary">Viviana</span></h1>
+      <h1 className="text-8xl md:text-[10rem]">Ciao, sono <span className="sticker normal-case text-primary">Viviana</span></h1>
       <div className="mt-12 grid gap-12 md:grid-cols-2">
         <div className="space-y-5 text-xl leading-relaxed">
           <p>Sono una Junior Social Media Manager freelance. Mi sono formata con il master di RCS Academy, dove ho lavorato a project work per brand come Webboh e Paramount.</p>
@@ -32,7 +32,7 @@ function About() {
           <h2 className="mb-6 text-5xl">Competenze</h2>
           <div className="flex flex-wrap gap-3">
             {skills.map((s) => (
-              <span key={s} className="cursor-default border-2 border-border bg-card px-4 py-2 font-semibold transition-all hover:-rotate-2 hover:bg-accent hover:shadow-brutal">
+              <span key={s} className="cursor-default rounded-full border-2 border-border bg-paper px-4 py-2 font-mono text-sm uppercase transition-all hover:-rotate-3 hover:bg-pink">
                 {s}
               </span>
             ))}
